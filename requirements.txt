@@ -1,0 +1,16 @@
+# Install a CUDA build of torch >= 2.6 for your GPU/driver first (torchvision included), e.g.
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+# Tested with torch 2.9.1 + CUDA 12.8.
+ms-swift==4.3.2
+transformers==5.12.1
+peft==0.19.1
+accelerate==1.12.0
+qwen-vl-utils==0.0.14
+av==15.1.0
+imageio-ffmpeg==0.6.0
+huggingface_hub>=1.0
+numpy
+pyarrow>=16
+pyyaml
+# evaluation with the official metric
+orena-focus==0.3.5

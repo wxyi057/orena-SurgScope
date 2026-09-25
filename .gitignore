@@ -1,0 +1,15 @@
+__pycache__/
+*.egg-info/
+.pytest_cache/
+build/
+dist/
+examples/
+runs/
+work/
+/data/
+answer.json
+answers.json
+trace.json
+challenge/resources/
+*.part.mp4
+*.tmp.mp4

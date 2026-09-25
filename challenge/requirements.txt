@@ -1,0 +1,19 @@
+# Exact versions of the submitted container (on top of pytorch/pytorch:2.9.1-cuda12.8-cudnn9-runtime).
+ms-swift==4.3.2
+transformers==5.12.1
+tokenizers==0.22.2rc0
+accelerate==1.12.0
+peft==0.19.1
+qwen-vl-utils==0.0.14
+av==15.1.0
+imageio-ffmpeg==0.6.0
+numpy==1.26.4
+safetensors==0.7.0
+huggingface_hub==1.22.0
+orena-focus==0.3.5
+modelscope==1.38.0
+datasets==3.1.0
+pyarrow==20.0.0
+pillow==11.3.0
+opencv-python-headless==4.11.0.86
+einops==0.8.1

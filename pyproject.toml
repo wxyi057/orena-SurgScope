@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "surgscope"
+version = "1.0.0"
+description = "Question-conditioned windowing for hour-long surgical video QA; solution to the PROCEDURE track of the ORena SAVE FOCUS Challenge (MICCAI 2026)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Weixi Yi" }, { name = "Hanyuan Zhang" }, { name = "Runlong He" }]
+keywords = ["surgical video", "long video understanding", "video question answering",
+            "vision-language model", "Qwen3.5", "LoRA", "MICCAI"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+dependencies = [
+    "ms-swift==4.3.2",
+    "transformers==5.12.1",
+    "peft==0.19.1",
+    "accelerate==1.12.0",
+    "qwen-vl-utils==0.0.14",
+    "av==15.1.0",
+    "imageio-ffmpeg==0.6.0",
+    "huggingface_hub>=1.0",
+    "numpy",
+    "pyarrow>=16",
+    "pyyaml",
+]
+
+[project.optional-dependencies]
+eval = ["orena-focus==0.3.5"]
+train = ["flash-attn>=2.7"]
+dev = ["pytest>=8", "ruff"]
+
+[project.scripts]
+surgscope = "surgscope.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/wxyi057/orena-SurgScope"
+Model = "https://huggingface.co/wxyi088/orena-SurgScope"
+Data = "https://huggingface.co/datasets/orena-dkfz/heico-focus-vqa"
+Challenge = "https://orena-focus-challenge.org"
+
+[tool.setuptools.packages.find]
+include = ["surgscope*"]
+
+[tool.setuptools.package-data]
+surgscope = ["resources/fonts/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = ["golden: needs the challenge parquet files (SURGSCOPE_DATA_ROOTS)"]
+
+[tool.ruff]
+line-length = 110

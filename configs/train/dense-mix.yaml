@@ -1,0 +1,11 @@
+# Fine-tune B of the released weight soup: time / counting / aggregation questions get
+# 1536 frames at 60 tokens per frame pair, all others 1152 frames at 84 tokens per pair.
+# This is also the regime used at inference.
+regime: dense-mix
+model: Qwen/Qwen3.5-9B
+global_batch_size: 32
+per_device_train_batch_size: 1
+learning_rate: 1.0e-4
+num_train_epochs: 15
+released_epoch: 14         # checkpoint that entered the soup (chosen on the local test split)
+max_length: 57344

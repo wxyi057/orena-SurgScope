@@ -1,0 +1,10 @@
+# Fine-tune C of the released weight soup: the same split as dense-mix, one step further
+# towards temporal density (2880 frames @ 32 tokens per pair / 1512 frames @ 64).
+regime: dense-mix-2
+model: Qwen/Qwen3.5-9B
+global_batch_size: 32
+per_device_train_batch_size: 1
+learning_rate: 1.0e-4
+num_train_epochs: 15
+released_epoch: 6          # checkpoint that entered the soup (chosen on the local test split)
+max_length: 65536

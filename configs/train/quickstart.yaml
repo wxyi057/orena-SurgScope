@@ -1,0 +1,10 @@
+# Smoke test on the example data: a few optimisation steps on one GPU to check that data,
+# model and trainer fit together. Not a training recipe.
+regime: dense-mix
+model: Qwen/Qwen3.5-9B
+global_batch_size: 1
+per_device_train_batch_size: 1
+learning_rate: 1.0e-4
+num_train_epochs: 1
+max_steps: 2
+max_length: 57344
